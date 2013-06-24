@@ -1,0 +1,10 @@
+syntax: glob
+*.hi
+*.o
+*.sqlite3
+.hsenv*
+yesod-devel/
+WebShelf/cabal-dev/
+WebShelf/dist/
+WebShelf/static/tmp/
+WebShelf/config/client_session_key.aes

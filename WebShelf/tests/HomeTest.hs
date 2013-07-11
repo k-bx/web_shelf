@@ -3,8 +3,8 @@ module HomeTest
     ( homeSpecs
     ) where
 
-import TestImport
-import qualified Data.List as L
+import qualified Data.List  as L
+import           TestImport
 
 homeSpecs :: Spec
 homeSpecs =

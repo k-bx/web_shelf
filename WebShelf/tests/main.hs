@@ -1,16 +1,17 @@
-{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoMonomorphismRestriction #-}
+{-# LANGUAGE OverloadedStrings         #-}
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 
 module Main where
 
-import Import
-import Yesod.Default.Config
-import Yesod.Test
-import Test.Hspec (hspec)
-import Application (makeFoundation)
+import           Application          (makeFoundation)
+import           Import
+import           Test.Hspec           (hspec)
+import           Yesod.Default.Config
+import           Yesod.Test
 
-import HomeTest
+import           EntriesTest
+import           HomeTest
 
 main :: IO ()
 main = do
@@ -20,4 +21,5 @@ main = do
     foundation <- makeFoundation conf
     hspec $ do
         yesodSpec foundation $ do
-            homeSpecs
+            -- homeSpecs
+            entriesSpecs

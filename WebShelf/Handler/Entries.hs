@@ -1,9 +1,19 @@
+{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE TypeFamilies     #-}
+
 module Handler.Entries where
 
-import Import
+import           Data.Aeson         (Value, object, toJSON, (.=))
+import qualified Data.Aeson.Generic as AesonGeneric
+import           Import
+-- import           Presenters.Entry   (makeEntryPresentation)
 
-getEntriesR :: Handler Html
-getEntriesR = error "Not yet implemented: getEntriesR"
+getEntriesR :: Handler Value
+getEntriesR = do
+  entries <- runDB $ selectList [] ([] :: [SelectOpt Entry])
+  return $ toJSON (entries :: [Entity Entry])
+
+-- return $ AesonGeneric.toJSON [makeEntryPresentation 1 "http://google.com"]
 
 postEntriesR :: Handler Html
 postEntriesR = error "Not yet implemented: postEntriesR"

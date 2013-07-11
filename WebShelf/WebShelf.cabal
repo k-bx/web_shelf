@@ -21,6 +21,8 @@ library
                      Settings.Development
                      Handler.Home
                      Handler.Entries
+                     Presenters
+                     Presenters.Entry
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
@@ -71,6 +73,14 @@ library
                  , conduit                       >= 1.0
                  , monad-logger                  >= 0.3
                  , fast-logger                   >= 0.3
+                 , yesod-test >= 1.2 && < 1.3
+                 , yesod-core
+                 , persistent
+                 , persistent-sqlite
+                 , resourcet
+                 , monad-logger
+                 , transformers
+                 , hspec
 
 executable         WebShelf
     if flag(library-only)
@@ -101,3 +111,6 @@ test-suite test
                  , monad-logger
                  , transformers
                  , hspec
+                 , wai-test
+                 , aeson
+                 , bytestring

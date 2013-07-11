@@ -8,3 +8,6 @@ WebShelf/cabal-dev/
 WebShelf/dist/
 WebShelf/static/tmp/
 WebShelf/config/client_session_key.aes
+WebShelf/ts--help/
+WebShelf/ts/
+*.sublime*

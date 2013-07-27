@@ -1,28 +1,29 @@
 {-# OPTIONS_GHC -fno-warn-orphans #-}
+{-# LANGUAGE TemplateHaskell #-}
 module Application
     ( makeApplication
     , getApplicationDev
     , makeFoundation
     ) where
 
-import Import
-import Settings
-import Yesod.Auth
-import Yesod.Default.Config
-import Yesod.Default.Main
-import Yesod.Default.Handlers
-import Network.Wai.Middleware.RequestLogger
+import           Control.Monad.Logger                 (runLoggingT)
 import qualified Database.Persist
-import Database.Persist.Sql (runMigration)
-import Network.HTTP.Conduit (newManager, def)
-import Control.Monad.Logger (runLoggingT)
-import System.IO (stdout)
-import System.Log.FastLogger (mkLogger)
+import           Database.Persist.Sql                 (runMigration)
+import           Import
+import           Network.HTTP.Conduit                 (def, newManager)
+import           Network.Wai.Middleware.RequestLogger
+import           Settings
+import           System.IO                            (stdout)
+import           System.Log.FastLogger                (mkLogger)
+import           Yesod.Auth
+import           Yesod.Default.Config
+import           Yesod.Default.Handlers
+import           Yesod.Default.Main
 
 -- Import all relevant handler modules here.
 -- Don't forget to add new modules to your cabal file!
-import Handler.Home
-import Handler.Entries
+import           Handler.Entries
+import           Handler.Home
 
 -- This line actually creates our YesodDispatch instance. It is the second half
 -- of the call to mkYesodData which occurs in Foundation.hs. Please see the

@@ -11,3 +11,4 @@ WebShelf/config/client_session_key.aes
 WebShelf/ts--help/
 WebShelf/ts/
 *.sublime*
+additional_packages/

@@ -14,4 +14,4 @@ data EntryPresentation = EntryPresentation { id  :: Integer
                        deriving (Data,Typeable,Show,Eq)
 
 makeEntryPresentation :: Integer -> String -> EntryPresentation
-makeEntryPresentation id url = EntryPresentation { id=id, url=url }
+makeEntryPresentation id' url' = EntryPresentation { id=id', url=url' }

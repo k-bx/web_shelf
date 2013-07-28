@@ -9,13 +9,14 @@ module TestImport
     , Example
     ) where
 
-import Yesod.Test
-import Database.Persist hiding (get)
-import Database.Persist.Sql (SqlPersistM, runSqlPersistMPool)
-import Control.Monad.IO.Class (liftIO)
+import           Control.Monad.IO.Class (liftIO)
+import           Database.Persist       hiding (get)
+import           Database.Persist.Sql   (SqlPersistM, runSqlPersistMPool)
+import           Prelude
+import           Yesod.Test
 
-import Foundation
-import Model
+import           Foundation
+import           Model
 
 type Spec = YesodSpec App
 type Example = YesodExample App

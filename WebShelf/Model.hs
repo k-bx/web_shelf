@@ -4,8 +4,7 @@
 
 module Model where
 
-import           Control.Applicative    ((<$>), (<*>))
-import           Data.Aeson             (ToJSON, object, (.=))
+import           Control.Applicative    ((<$>))
 import           Data.Text              (Text)
 import           Data.Typeable          (Typeable)
 import           Database.Persist.Quasi

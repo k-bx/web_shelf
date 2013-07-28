@@ -3,8 +3,6 @@
 
 module Handler.Entries where
 
-import           Data.Aeson         (Value, object, toJSON, (.=))
-import qualified Data.Aeson.Generic as AesonGeneric
 import           Import
 -- import           Presenters.Entry   (makeEntryPresentation)
 

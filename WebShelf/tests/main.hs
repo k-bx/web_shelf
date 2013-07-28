@@ -10,13 +10,12 @@ import           Database.Persist.Sql    (runMigration)
 import           Database.Persist.Sqlite (runSqlite)
 import           Import
 import           System.Directory        (doesFileExist, removeFile)
-import           Test.Hspec              (Spec, hspec, before)
-import           Test.Hspec.Core         (SpecTree (..), fromSpecList, runSpecM)
+import           Test.Hspec              (hspec, before)
 import           Yesod.Default.Config
 import           Yesod.Test
 
+-- import           HomeTest
 import           EntriesTest
-import           HomeTest
 import           ModelTest
 
 main :: IO ()
